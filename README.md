@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/62124b76987e4b29b63be9a20f30efdf)](https://app.codacy.com/app/IlyaGulko/initial-install?utm_source=github.com&utm_medium=referral&utm_content=IlyaGulko/initial-install&utm_campaign=Badge_Grade_Settings)
 [![Badge](https://img.shields.io/badge/state-work%20in%20progress-yellowgreen.svg)]()
 
 
