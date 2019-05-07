@@ -3,32 +3,32 @@
 
 # initial-install - script that installs defined programs and applies configurations
 
-### List of installables:
+### List of installables
 
-  * git
-  * python3 | pip3
-  * docker
-  * ansible
-  * terraform
-  * golang
-  * packer
-  * vim | vimrc
+  *  git
+  *  python3 | pip3
+  *  docker
+  *  ansible
+  *  terraform
+  *  golang
+  *  packer
+  *  vim | vimrc
 
 
-### List of actions:
+### List of actions
 
   * installed
   * help
 
-### Work in progress: 
+### Work in progress
 
-  * ***CRITICAL:***
-    * export PATH variable without exiting script  
+  *  ***CRITICAL:***
+    *  export PATH variable without exiting script  
 
-  * **actions:** 
-    * installed
+  *  **actions:** 
+    *  installed
   
-  * **code:**
-    * handling errorrs
-    * trapping Ctrl-C
-    * options to determine version of each product
+  *  **code:**
+    *  handling errorrs
+    *  trapping Ctrl-C
+    *  options to determine version of each product

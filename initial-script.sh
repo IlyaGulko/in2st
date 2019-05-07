@@ -50,9 +50,9 @@ install_docker () {
     sudo apt-get update
     sudo apt-get install docker-ce docker-ce-cli containerd.io -y
     echo "=== Adding $USER to docker group"
-    sudo usermod -aG docker $USER
+    sudo usermod -aG docker ${USER}
     sudo docker --version
-    echo "=== Re-login to use Docker with your account"
+    echo "=== Re-login to use Docker with your account" && sleep 1
 }
 
 install_ansible () {
@@ -60,7 +60,8 @@ install_ansible () {
     sudo apt-get install software-properties-common
     sudo apt-add-repository --yes --update ppa:ansible/ansible
     sudo apt-get install ansible -y
-    ansible --version
+    ansible --version \
+        && echo "=== Ansible has been successfully installed" && sleep 1
 }
 
 install_terraform () {
@@ -71,7 +72,8 @@ install_terraform () {
     unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip
     sudo rm -rf /usr/local/bin/terraform
     sudo mv terraform /usr/local/bin/
-    terraform --version
+    terraform --version \
+        && echo "=== Terraform has been successfully installed" && sleep 1
 }
 
 install_golang () {
@@ -105,7 +107,8 @@ install_packer () {
     cd packer
     sudo apt-get install build-essential -y
     make dev
-    packer --version
+    packer --version \
+        && echo "=== Packer has been successfully installed" && sleep 1
 }
 
 install_vim () {
