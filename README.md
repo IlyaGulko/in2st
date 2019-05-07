@@ -15,7 +15,7 @@
   * vim | vimrc
 
 
-###List of actions:
+### List of actions:
 
   * installed
   * help
