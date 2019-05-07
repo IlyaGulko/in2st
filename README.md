@@ -1,5 +1,5 @@
 [![Badge](https://img.shields.io/badge/state-work%20in%20progress-yellowgreen.svg)]()
-
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/7cddfd3a3d4449388c31c0b1b395f5e4)](https://www.codacy.com/app/IlyaGulko/initial-install?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=IlyaGulko/initial-install&amp;utm_campaign=Badge_Grade)
 
 # initial-install - script that installs defined programs and applies configurations
 
