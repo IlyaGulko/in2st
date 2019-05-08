@@ -53,7 +53,7 @@ install_docker () {
     sudo apt-get update
     sudo apt-get install docker-ce docker-ce-cli containerd.io -y
     echo "=== Adding $USER to docker group"
-    sudo usermod -aG docker $USER
+    sudo usermod -aG docker ${USER}
     sudo docker --version
     echo "=== Re-login to use Docker with user $USER without sudo"
 }
