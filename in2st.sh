@@ -1,7 +1,8 @@
 #! /usr/bin/env bash
 
 usage () {
-    echo "Usage: $0 [-h|--help] [string] -- script to install some programs and apply configurations
+    echo "
+Usage: $0 [-h|--help] [string] -- install programs and apply configurations
     
     git                 install git
     python|pip|pip3     install latest python3 and pip3 
@@ -31,6 +32,8 @@ install_pip3 () {
     echo "=== Installing Python3 and Pip3.."
     sudo apt-get install python3 -y
     sudo apt-get install python3-pip -y
+    pip3 --version \
+        && echo "=== Pip3 has been successfully installed" && sleep 1
 }
 
 install_docker () {
@@ -52,7 +55,7 @@ install_docker () {
     echo "=== Adding $USER to docker group"
     sudo usermod -aG docker $USER
     sudo docker --version
-    echo "=== Re-login to use Docker with your account"
+    echo "=== Re-login to use Docker with user $USER without sudo"
 }
 
 install_ansible () {
@@ -60,7 +63,8 @@ install_ansible () {
     sudo apt-get install software-properties-common
     sudo apt-add-repository --yes --update ppa:ansible/ansible
     sudo apt-get install ansible -y
-    ansible --version
+    ansible --version \
+        && echo "=== Ansible has been successfully installed" && sleep 1
 }
 
 install_terraform () {
@@ -71,7 +75,8 @@ install_terraform () {
     unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip
     sudo rm -rf /usr/local/bin/terraform
     sudo mv terraform /usr/local/bin/
-    terraform --version
+    terraform --version \
+        && echo "=== Terraform has been successfully installed" && sleep 1
 }
 
 install_golang () {
@@ -105,14 +110,16 @@ install_packer () {
     cd packer
     sudo apt-get install build-essential -y
     make dev
-    packer --version
+    packer --version \
+        && echo "=== Packer has been successfully installed" && sleep 1
 }
 
 install_vim () {
     local VIMRC_LOCATION="https://gist.githubusercontent.com/IlyaGulko/0c10b8d6cebb286daf4359b04439514e/raw/83b6651df7b7cbefda36938c217e70e3fd3b3588/vimrc"
     echo "=== Updating /etc/vim/vimrc"
     sudo apt-get install vim -y
-    sudo wget -O /etc/vim/vimrc $VIMRC_LOCATION
+    sudo wget -O /etc/vim/vimrc $VIMRC_LOCATION \
+        && echo "=== Vimrc has been changed" && sleep 1
 }
 
 installed () {
