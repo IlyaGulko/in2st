@@ -1,7 +1,7 @@
 # in2st
 
 [![Status Badge](https://img.shields.io/badge/state-work%20in%20progress-yellowgreen.svg)](https://github.com/IlyaGulko/initial-install/#work-in-progress)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/7cddfd3a3d4449388c31c0b1b395f5e4)](https://www.codacy.com/app/IlyaGulko/initial-install?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=IlyaGulko/initial-install&amp;utm_campaign=Badge_Grade) 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/584677dab7224d1caa35cbcd8e01745d)](https://www.codacy.com/app/IlyaGulko/in2st?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=IlyaGulko/in2st&amp;utm_campaign=Badge_Grade)
 
 
 >  This tool is ~~garbage~~ in early stage of development.
