@@ -53,7 +53,7 @@ install_docker () {
     sudo apt-get update
     sudo apt-get install docker-ce docker-ce-cli containerd.io -y
     echo "=== Adding $USER to docker group"
-    sudo usermod -aG docker ${USER}
+    sudo usermod -aG docker "$USER"
     sudo docker --version
     echo "=== Re-login to use Docker with user $USER without sudo"
 }
@@ -100,7 +100,7 @@ install_golang () {
 }
 
 install_packer () {
-    go version > /dev/null 2>&1; [ $? != 0 ] \
+    [ ! go version > /dev/null 2>&1 ] \
         && install_golang \
         && echo "Run 'source sourcefile' and start installing again" \
         && exit 0
