@@ -5,11 +5,11 @@ usage () {
 Usage: $0 [-h|--help] [string] -- install programs and apply configurations
     
     git                 install git
-    python|pip|pip3     install latest python3 and pip3 
+    pip|pip3     install latest python3 and pip3 
     docker              install containerd, docker and add user to docker group
     ansible             install ansible 
     terraform           install terraform
-    golang              install golang and configure its environment
+    go|golang              install golang and configure its environment
     packer              install packer
     vim|vimrc           download vim configuration
     install-everything  install all programs and configurations
@@ -75,6 +75,7 @@ install_terraform () {
     unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip
     sudo rm -rf /usr/local/bin/terraform
     sudo mv terraform /usr/local/bin/
+    sudo rm terraform_${TERRAFORM_VERSION}_linux_amd64.zip
     terraform --version \
         && echo "=== Terraform has been successfully installed" && sleep 1
 }
@@ -89,6 +90,7 @@ install_golang () {
     tar -xf go${GO_VERSION}.linux-amd64.tar.gz
     sudo rm -rf /usr/local/go
     sudo mv -f go /usr/local/
+    sudo rm go${GO_VERSION}.linux-amd64.tar.gz
     GOROOT=/usr/local/go
     GOPATH=$HOME/$PROJECT_DIR
     PATH=$PATH:$GOPATH/bin:$GOROOT/bin
@@ -135,7 +137,7 @@ for arg in "$@"; do
         git)
             install_git
             ;;
-        python|pip|pip3)
+        pip|pip3)
             install_pip3
             ;;
         docker)
@@ -147,7 +149,7 @@ for arg in "$@"; do
         terraform)
             install_terraform
             ;;
-        golang)
+        go|golang)
             install_golang
             ;;
         packer)
@@ -165,6 +167,7 @@ for arg in "$@"; do
             install_docker
             install_ansible
             install_terraform
+            install_golang
             install_packer
             install_vim
             ;;

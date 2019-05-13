@@ -5,10 +5,14 @@
 
 >  This tool is ~~garbage~~ in early stage of development.
 
-## What's the point?
+## What's the point
 
 This script is supposed to automate installation of *default* list of programs and applying some configurations.
 
+## Usage
+
+      $ wget https://raw.githubusercontent.com/IlyaGulko/in2st/master/in2st.sh
+      $ in2st.sh [--help] <string>
 
 ## List of Installables
 
@@ -28,16 +32,19 @@ This script is supposed to automate installation of *default* list of programs a
 
 ## Work in Progress
 
-*  ***CRITICAL:***
-   *  export PATH variable without exiting script  
+* ***CRITICAL:***
 
-*  **code:**
-   * *installed* action 
-   * versioning
-   * handling errorrs
-   * trapping Ctrl-C
-   * options to determine version of each product
-      * add vars file
-      * add commands to configure vars
-      
+  *  export PATH variable without exiting script  
+
+* **code:**
+
+  * *installed* action 
+  * versioning
+  * handling errorrs
+  * trapping Ctrl-C
+  * options to determine version of each product
+
+    * add vars file
+    * add commands to configure vars
+
 * add compatibility with other distros
