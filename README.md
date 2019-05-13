@@ -39,5 +39,5 @@ This script is supposed to automate installation of *default* list of programs a
    * options to determine version of each product
       * add vars file
       * add commands to configure vars
-
+      
 * add compatibility with other distros
