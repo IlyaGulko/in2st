@@ -25,6 +25,8 @@ This script is supposed to automate installation of *default* list of programs a
 * packer
 * vim | vimrc
 
+* ***mc*** 
+
 ## List of Actions
 
 * installed
