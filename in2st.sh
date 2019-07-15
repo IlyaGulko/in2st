@@ -5,13 +5,14 @@ usage () {
 Usage: $0 [-h|--help] [string] -- install programs and apply configurations
     
     git                 install git
-    pip|pip3     install latest python3 and pip3 
+    python|python3	install the latest python3
+    pip|pip3	        install pip3
     docker              install containerd, docker and add user to docker group
     ansible             install ansible 
     terraform           install terraform
-    go|golang              install golang and configure its environment
+    go|golang           install golang and configure its environment
     packer              install packer
-    vim|vimrc           download vim configuration
+    vim|vimrc           configure vim 
     install-everything  install all programs and configurations
 
     installed           show what applications have been already installed
@@ -28,9 +29,17 @@ install_git () {
         && echo "=== Git has been successfully installed" && sleep 1
 }
 
-install_pip3 () {
-    echo "=== Installing Python3 and Pip3.."
+install_python () {
+    echo "=== Installing Python3.."
     sudo apt-get install python3 -y
+    python3 --version \
+        && echo "=== Python3 has been successfully installed" && sleep 1
+}
+
+install_pip3 () {
+    [ ! python3 --version > /dev/null/ 2>&1 ] \
+	&& install_python
+    echo "=== Installing pip3.."
     sudo apt-get install python3-pip -y
     pip3 --version \
         && echo "=== Pip3 has been successfully installed" && sleep 1
@@ -118,10 +127,16 @@ install_packer () {
 
 install_vim () {
     local VIMRC_LOCATION="https://gist.githubusercontent.com/IlyaGulko/0c10b8d6cebb286daf4359b04439514e/raw/83b6651df7b7cbefda36938c217e70e3fd3b3588/vimrc"
-    echo "=== Updating /etc/vim/vimrc"
+    echo "=== Setting up VIM"
+    [ ! python3 --version > /dev/null 2>&1 ] \
+	&& install_python
     sudo apt-get install vim -y
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    sudo apt install build-essential cmake -y
+    python3 ~/.vim/plugged/youcompleteme/install.py
     sudo wget -O /etc/vim/vimrc $VIMRC_LOCATION \
-        && echo "=== Vimrc has been changed" && sleep 1
+        && echo "=== VIM has been configured" && sleep 1
 }
 
 installed () {
@@ -137,7 +152,10 @@ for arg in "$@"; do
         git)
             install_git
             ;;
-        pip|pip3)
+	python|python3)
+	    install_python
+	    ;;
+	pip|pip3)
             install_pip3
             ;;
         docker)
