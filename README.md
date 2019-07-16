@@ -17,7 +17,8 @@ This script is supposed to automate installation of *default* list of programs a
 ## List of Installables
 
 * git
-* python3 | pip3
+* python3 
+* pip3
 * docker
 * ansible
 * terraform

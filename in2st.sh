@@ -126,7 +126,8 @@ install_packer () {
 }
 
 install_vim () {
-    local VIMRC_LOCATION="https://gist.githubusercontent.com/IlyaGulko/0c10b8d6cebb286daf4359b04439514e/raw/83b6651df7b7cbefda36938c217e70e3fd3b3588/vimrc"
+    local
+    VIMRC_LOCATION="https://gist.githubusercontent.com/IlyaGulko/0c10b8d6cebb286daf4359b04439514e/raw/0700c001f13f66bb5c71a82e19d1bcc91bd9f64e/VIMRC_LOCATION"
     echo "=== Setting up VIM"
     [ ! python3 --version > /dev/null 2>&1 ] \
 	&& install_python
@@ -135,8 +136,8 @@ install_vim () {
 	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     sudo apt install build-essential cmake -y
     python3 ~/.vim/plugged/youcompleteme/install.py
-    sudo wget -O /etc/vim/vimrc $VIMRC_LOCATION \
-        && echo "=== VIM has been configured" && sleep 1
+    sudo wget -O ~/.vimrc $VIMRC_LOCATION \
+        && echo "=== VIM has been configured. Run :PlugInstall at the first run." && sleep 1
 }
 
 installed () {
