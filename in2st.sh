@@ -5,7 +5,7 @@ usage () {
 Usage: $0 [-h|--help] [string] -- install programs and apply configurations
     
     git                 install git
-    python|python3	install the latest python3
+    python|python3	    install the latest python3
     pip|pip3	        install pip3
     docker              install containerd, docker and add user to docker group
     ansible             install ansible 

@@ -12,6 +12,7 @@ This script is supposed to automate installation of *default* list of programs a
 ## Usage
 
       $ wget https://raw.githubusercontent.com/IlyaGulko/in2st/master/in2st.sh
+      $ chmod +x in2st.sh
       $ in2st.sh [--help] <string>
 
 ## List of Installables
